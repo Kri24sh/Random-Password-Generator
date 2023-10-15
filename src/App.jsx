@@ -12,7 +12,7 @@ const App = () => {
     const passgen = useCallback(()=>{
       let password = "";
       let uplwchar = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-      const num  = "0123456789";
+      const num  = "123456789";
       const symbol = "!@#$%^&*()?><}}][";
 
       if(numallow) {uplwchar += num}
@@ -46,22 +46,22 @@ const App = () => {
     <>
 
     <div className="w-full flex-wrap gap-4 h-screen p-10 bg-slate-900 flex flex-col overflow-hidden items-center justify-center">
-      <div className=' text-white text-4xl overflow-hidden'>RANDOM PASSWORD GENRATOR</div>
+      <div className=' text-white font-bold text-3xl overflow-hidden'>RANDOM PASSWORD GENRATOR</div>
       <div className='py-6 px-6 w-3/4 h-70 font-bold text-xl bg-gray-700 flex overflow-hidden flex-col rounded-xl'>
         <input type="text"  ref={passwordRef} placeholder='Random Password' value={pass} className='p-2 text-black h-9 rounded-lg w-full border-none' id='dis' readOnly/>
-        <button className=" w-full bg-gray-600 rounded-xl my-3" onClick={copyPasswordToClipboard}>
+        <button className=" w-full bg-gray-600 rounded-xl my-3 hover:bg-slate-500" onClick={copyPasswordToClipboard}>
           COPY
         </button>
         
         <div className=' flex justify-evenly flex-shrink flex-wrap   flex-row'>
-          <button className=' rounded-full h-8 w-8 flex flex-wrap justify-center overflow-hidden  items-center bg-gray-600' >-</button>
+          {/* <button className=' rounded-full h-8 w-8 flex flex-wrap justify-center overflow-hidden  items-center bg-gray-600' >-</button> */}
         <input type="range" className=' w-2/4 cursor-pointer' min={6} max={100} value={len} id='ma' onChange={(e)=>setlen(e.target.value)}/>
-        <button className=' rounded-full h-8 w-8  bg-gray-600'>+</button>
+        {/* <button className=' rounded-full h-8 w-8  bg-gray-600'>+</button> */}
         <label className=''>Password length : {len}</label>
         </div>
 
-        <div className=' flex flex-row gap-9 overflow-hidden px-5 py-3 '>
-          <label>Characters used :</label>
+        <div className=' flex flex-row gap-7 overflow-hidden px-5 py-3 '>
+          <label>Characters used:</label>
           
           <div>
           <input type="checkbox" id='numbers' className='mx-2' defaultChecked ={numallow} onChange={  ()=>setnumallow((prev)=>!prev) } />
