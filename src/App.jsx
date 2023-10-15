@@ -12,7 +12,7 @@ const App = () => {
     const passgen = useCallback(()=>{
       let password = "";
       let uplwchar = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-      const num  = "123456789";
+      const num  = "0123456789";
       const symbol = "!@#$%^&*()?><}}][";
 
       if(numallow) {uplwchar += num}
